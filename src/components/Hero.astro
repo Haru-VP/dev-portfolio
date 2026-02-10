@@ -1,0 +1,111 @@
+---
+import Stat from './Stat.astro';
+---
+
+<section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-28">
+  <!-- Background image + overlay -->
+  <div class="absolute inset-0 z-0">
+    <img
+      src="https://images.unsplash.com/photo-1644088379091-d574269d422f"
+      alt="Abstract background"
+      class="w-full h-full object-cover opacity-10"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-background/60 via-pastel-pink/10 to-background"></div>
+  </div>
+
+  <!-- Particles -->
+  <div class="absolute inset-0 z-0 pointer-events-none">
+    <div class="particle pink"></div>
+    <div class="particle lavender"></div>
+    <div class="particle mint"></div>
+    <div class="particle pink delay"></div>
+    <div class="particle lavender delay-2"></div>
+  </div>
+
+  
+  <!-- Content -->
+  <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
+    <!-- Role -->
+    <div class="flex items-center justify-center gap-2 mb-6 text-pastel-pink">
+      ✨
+      <span class="font-medium tracking-wide">
+        Frontend Developer
+      </span>
+    </div>
+
+
+    <!-- Heading -->
+    <h1 class="font-serif text-5xl sm:text-6xl lg:text-8xl font-bold mb-6 leading-tight">
+        <span class="text-gray-800">
+            Creando experiencias
+        </span>
+        <span class="inline-block bg-gradient-to-r from-pastel-pink via-pastel-lavender to-pastel-mint bg-clip-text text-transparent font-extrabold">
+            digitales
+        </span>
+
+
+    </h1>
+    
+
+
+
+    <!-- Tagline -->
+    
+    <p class="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto mb-10">
+      Diseño y desarrollo interfaces elegantes, funcionales y centradas en las personas.
+    </p>
+
+    <!-- Buttons -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a
+        href="/projects"
+        class="inline-flex items-center gap-2
+         rounded-full px-6 py-3
+         bg-gradient-to-r from-pink-400 to-purple-400
+         text-white font-medium
+         shadow-lg hover:scale-105 transition">
+        Ver proyectos
+        →
+      </a>
+
+      <a
+        href="/contact"
+        class="inline-flex items-center justify-center px-8 py-3 rounded-full border border-pastel-pink/40 text-gray-700 hover:border-pastel-pink/70 transition"
+      >
+        Contacto
+      </a>
+    </div>
+
+    <!-- Stats -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20">
+      <Stat value="15+" label="Proyectos" />
+      <Stat value="3+" label="Años de experiencia" />
+      <Stat value="20+" label="Tecnologías" />
+      <Stat value="30+" label="Clientes" />
+    </div>
+  </div>
+</section>
+
+<style>
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  opacity: 0;
+  animation: float 6s infinite ease-in-out;
+}
+
+.pink { background: #F4A7C1; left: 20%; animation-delay: 0s; }
+.lavender { background: #E9C9FF; left: 50%; animation-delay: 1s; }
+.mint { background: #9BE4C3; left: 70%; animation-delay: 2s; }
+
+.delay { animation-delay: 3s; }
+.delay-2 { animation-delay: 4s; }
+
+@keyframes float {
+  0% { transform: translateY(60vh); opacity: 0; }
+  50% { opacity: 0.6; }
+  100% { transform: translateY(-10vh); opacity: 0; }
+}
+</style>

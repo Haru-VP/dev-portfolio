@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro"
+import ProjectCard from "../components/ProjectCard.astro"
+---
+
+<BaseLayout>
+  <section class="px-6 py-32 max-w-7xl mx-auto">
+    <h1 class="mb-16 font-serif text-5xl">
+      <span class="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+        Proyectos
+      </span>
+    </h1>
+
+    <div class="grid gap-10 md:grid-cols-2">
+      <ProjectCard
+        title="Portfolio personal"
+        description="Diseño y desarrollo de un portfolio editorial con Astro y Tailwind."
+        image="/projects/portfolio.jpg"
+        href="#"
+      />
+
+      <ProjectCard
+        title="Landing creativa"
+        description="Experiencia visual centrada en animaciones suaves y narrativa."
+        image="/projects/landing.jpg"
+        href="#"
+      />
+    </div>
+  </section>
+</BaseLayout>

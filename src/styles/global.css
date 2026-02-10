@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===============================
+   CSS VARIABLES
+================================ */
+
+:root {
+  --background: #fff5f7;
+  --foreground: #4a4a4a;
+
+  --card: #ffffff;
+  --card-foreground: #4a4a4a;
+
+  --pastel-pink: #ffb3c6;
+  --pastel-rose: #ffc9d9;
+  --pastel-lavender: #e8d5e8;
+  --pastel-mint: #b8e6d5;
+  --pastel-peach: #ffd4b8;
+  --pastel-blue: #c4d7f2;
+
+  --border: rgba(255, 179, 198, 0.25);
+  --radius: 1rem;
+}
+
+/* Dark mode preparado (no rompe light) */
+.dark {
+  --background: #1a1625;
+  --foreground: #f5e6f1;
+  --card: #251e30;
+  --card-foreground: #f5e6f1;
+  --border: rgba(255, 179, 198, 0.15);
+}
+
+/* ===============================
+   BASE STYLES
+================================ */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+/* ===============================
+   FONTS UTILITIES
+================================ */
+
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.font-script {
+  font-family: 'Dancing Script', cursive;
+}
+
+/* ===============================
+   ANIMATIONS
+================================ */
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
