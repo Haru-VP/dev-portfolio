@@ -1,24 +1,367 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro"
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const contactInfo = [
+  {
+    icon: "📧",
+    labelKey: "contactEmail",
+    value: "tu.email@ejemplo.com",
+    link: "mailto:tu.email@ejemplo.com",
+  },
+  {
+    icon: "📱",
+    labelKey: "contactPhone",
+    value: "+1 (555) 123-4567",
+    link: "tel:+15551234567",
+  },
+  {
+    icon: "📍",
+    labelKey: "contactLocation",
+    value: "Ciudad, País",
+    link: null,
+  },
+];
+
+const socialLinks = [
+  {
+    icon: "github",
+    label: "GitHub",
+    url: "https://github.com/tuusuario",
+  },
+  {
+    icon: "linkedin",
+    label: "LinkedIn",
+    url: "https://linkedin.com/in/tuusuario",
+  },
+  {
+    icon: "twitter",
+    label: "Twitter",
+    url: "https://twitter.com/tuusuario",
+  },
+];
 ---
 
-<BaseLayout>
-  <section class="px-6 py-32 max-w-6xl mx-auto">
-    <h1 class="mb-12 font-serif text-5xl">
-      <span class="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
-        Contacto
-      </span>
-    </h1>
+<BaseLayout title="Contacto | Valen Pinto">
+  <div class="min-h-screen py-20 px-4 sm:px-6 lg:px-8 pt-28">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Header -->
+      <div class="text-center mb-16 animate-fade-in">
+        <div class="flex items-center justify-center mb-4">
+          <span class="text-2xl mr-2">✉️</span>
+          <span class="text-pastel-pink font-medium" data-i18n="navContact">Contacto</span>
+        </div>
+        <h1 class="text-5xl sm:text-6xl font-bold text-foreground mb-4 font-serif" data-i18n="contactTitle">
+          Hablemos
+        </h1>
+        <p class="text-foreground/60 text-lg max-w-2xl mx-auto" data-i18n="contactSubtitle">
+          ¿Tienes una idea, proyecto o simplemente quieres saludar?
+        </p>
+      </div>
 
-    <p class="mb-10 max-w-xl text-gray-600">
-      ¿Trabajamos juntas? Escríbeme y conversemos.
-    </p>
+      <div class="grid lg:grid-cols-2 gap-12">
+        
+        <!-- Contact Form -->
+        <div class="animate-slide-in-left">
+          <form id="contact-form" class="space-y-6">
+            <div>
+              <label for="name" class="block text-foreground mb-2 font-medium" data-i18n="contactName">
+                Nombre
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="w-full px-4 py-3 bg-card/60 border border-pastel-pink/20 rounded-xl text-foreground placeholder-foreground/40 focus:outline-none focus:border-pastel-pink/60 transition-colors"
+                data-placeholder-key="contactNamePlaceholder"
+                placeholder="Tu nombre"
+              />
+            </div>
 
-    <a
-      href="mailto:tuemail@email.com"
-      class="inline-block rounded-full bg-gradient-to-r from-pink-400 to-purple-400 px-8 py-3 text-white font-medium shadow hover:scale-105 transition"
-    >
-      Enviar email
-    </a>
-  </section>
+            <div>
+              <label for="email" class="block text-foreground mb-2 font-medium" data-i18n="contactEmail">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-4 py-3 bg-card/60 border border-pastel-pink/20 rounded-xl text-foreground placeholder-foreground/40 focus:outline-none focus:border-pastel-pink/60 transition-colors"
+                data-placeholder-key="contactEmailPlaceholder"
+                placeholder="tu@email.com"
+              />
+            </div>
+
+            <div>
+              <label for="subject" class="block text-foreground mb-2 font-medium" data-i18n="contactSubject">
+                Asunto
+              </label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                required
+                class="w-full px-4 py-3 bg-card/60 border border-pastel-pink/20 rounded-xl text-foreground placeholder-foreground/40 focus:outline-none focus:border-pastel-pink/60 transition-colors"
+                data-placeholder-key="contactSubjectPlaceholder"
+                placeholder="¿En qué puedo ayudarte?"
+              />
+            </div>
+
+            <div>
+              <label for="message" class="block text-foreground mb-2 font-medium" data-i18n="contactMessage">
+                Mensaje
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows="6"
+                class="w-full px-4 py-3 bg-card/60 border border-pastel-pink/20 rounded-xl text-foreground placeholder-foreground/40 focus:outline-none focus:border-pastel-pink/60 transition-colors resize-none"
+                data-placeholder-key="contactMessagePlaceholder"
+                placeholder="Cuéntame sobre tu proyecto..."
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full px-8 py-3 bg-gradient-to-r from-pastel-pink to-pastel-lavender text-white rounded-full font-medium flex items-center justify-center gap-2 shadow-lg hover:scale-105 transition-all"
+              style="box-shadow: 0 10px 30px rgba(244, 167, 193, 0.3)"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+              <span data-i18n="contactSend">Enviar mensaje</span>
+            </button>
+
+            <!-- Success Message -->
+            <div id="success-message" class="hidden p-4 bg-pastel-mint/20 border border-pastel-mint/50 rounded-xl text-foreground text-center">
+              <span data-i18n="contactSuccess">¡Mensaje enviado con éxito! Te responderé pronto.</span>
+            </div>
+          </form>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="space-y-8 animate-slide-in-right">
+          
+          <!-- Contact Info Cards -->
+          <div class="space-y-4">
+            {contactInfo.map((info, index) => (
+              <div 
+                class="contact-card bg-card/60 backdrop-blur-sm border border-pastel-lavender/30 rounded-2xl p-6 hover:border-pastel-lavender/50 transition-all"
+                style={`animation-delay: ${index * 0.1}s`}
+              >
+                <div class="flex items-center gap-4">
+                  <div class="text-3xl">{info.icon}</div>
+                  <div>
+                    <p class="text-foreground/60 text-sm mb-1" data-i18n={info.labelKey}>
+                      {info.labelKey}
+                    </p>
+                    {info.link ? (
+                      <a
+                        href={info.link}
+                        class="text-foreground font-medium hover:text-pastel-pink transition-colors"
+                      >
+                        {info.value}
+                      </a>
+                    ) : (
+                      <p class="text-foreground font-medium">{info.value}</p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <!-- Social Links -->
+          <div 
+            class="bg-card/60 backdrop-blur-sm border border-pastel-pink/20 rounded-2xl p-6"
+            style="box-shadow: 0 10px 40px rgba(244, 167, 193, 0.1)"
+          >
+            <h3 class="text-foreground font-semibold text-lg mb-4 font-serif" data-i18n="contactSocial">
+              Sígueme en redes
+            </h3>
+            <div class="flex gap-4">
+              {socialLinks.map((social) => (
+                <a
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-link w-12 h-12 bg-gradient-to-br from-pastel-pink/20 to-pastel-lavender/20 rounded-xl flex items-center justify-center text-foreground hover:from-pastel-pink/40 hover:to-pastel-lavender/40 border border-pastel-pink/20 hover:border-pastel-pink/40 transition-all"
+                  aria-label={social.label}
+                >
+                  {social.icon === "github" && (
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                      <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                    </svg>
+                  )}
+                  {social.icon === "linkedin" && (
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                      <rect x="2" y="9" width="4" height="12"></rect>
+                      <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                  )}
+                  {social.icon === "twitter" && (
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                    </svg>
+                  )}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <!-- Availability -->
+          <div class="bg-card/60 backdrop-blur-sm border border-pastel-mint/30 rounded-2xl p-6">
+            <h3 class="text-foreground font-semibold text-lg mb-3 font-serif" data-i18n="contactAvailability">
+              Disponibilidad
+            </h3>
+            <div class="flex items-center gap-2 mb-2">
+              <div class="w-3 h-3 rounded-full bg-pastel-mint animate-pulse"></div>
+              <span class="text-pastel-mint font-medium" data-i18n="contactAvailable">
+                Disponible para proyectos
+              </span>
+            </div>
+            <p class="text-foreground/60 text-sm" data-i18n="contactAvailableDesc">
+              Actualmente aceptando nuevos proyectos y colaboraciones.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </BaseLayout>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out;
+  }
+
+  .animate-slide-in-left {
+    animation: slide-in-left 0.6s ease-out 0.2s both;
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.6s ease-out 0.4s both;
+  }
+
+  .contact-card {
+    animation: fade-in 0.6s ease-out both;
+  }
+
+  .social-link:hover {
+    transform: scale(1.1) translateY(-5px);
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+</style>
+
+<script>
+  import { translations } from "../i18n/translations";
+
+  // Handle form submission
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const successMessage = document.getElementById('success-message');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const button = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    const buttonText = button.querySelector('span');
+    const originalText = buttonText?.textContent || '';
+    
+    // Show loading state
+    if (buttonText) {
+      const lang = localStorage.getItem("lang") || "es";
+      buttonText.textContent = translations[lang].contactSending;
+    }
+    button.disabled = true;
+
+    // Simulate form submission (replace with actual API call)
+    setTimeout(() => {
+      // Reset form
+      form.reset();
+      
+      // Show success message
+      successMessage?.classList.remove('hidden');
+      
+      // Reset button
+      if (buttonText) {
+        const lang = localStorage.getItem("lang") || "es";
+        buttonText.textContent = translations[lang].contactSend;
+      }
+      button.disabled = false;
+
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        successMessage?.classList.add('hidden');
+      }, 5000);
+    }, 1500);
+  });
+
+  // Update placeholders on language change
+  function updatePlaceholders() {
+    const lang = localStorage.getItem("lang") || "es";
+    
+    document.querySelectorAll('[data-placeholder-key]').forEach(el => {
+      const key = el.getAttribute('data-placeholder-key');
+      if (key && el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement) {
+        el.placeholder = translations[lang][key] || el.placeholder;
+      }
+    });
+  }
+
+  // Initialize placeholders
+  updatePlaceholders();
+
+  // Update after View Transitions
+  document.addEventListener('astro:after-swap', updatePlaceholders);
+</script>

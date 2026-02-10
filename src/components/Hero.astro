@@ -26,38 +26,40 @@ import Stat from './Stat.astro';
   <!-- Content -->
   <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
     <!-- Role -->
-    <div class="flex items-center justify-center gap-2 mb-6 text-pastel-pink">
+    <div class="flex items-center justify-center gap-2 mb-7 text-pastel-pink">
       ✨
-      <span class="font-medium tracking-wide">
+      <span data-i18n="heroRole"
+            class="font-medium tracking-wide">
         Frontend Developer
       </span>
     </div>
 
 
     <!-- Heading -->
-    <h1 class="font-serif text-5xl sm:text-6xl lg:text-8xl font-bold mb-6 leading-tight">
-        <span class="text-gray-800">
-            Creando experiencias
-        </span>
-        <span class="inline-block bg-gradient-to-r from-pastel-pink via-pastel-lavender to-pastel-mint bg-clip-text text-transparent font-extrabold">
-            digitales
-        </span>
-
-
-    </h1>
+    <h1 class="font-serif text-5xl sm:text-6xl lg:text-8xl font-bold mb-6 leading-[1.15]">
     
+    <span data-i18n="heroTitle1"
+          class="text-foreground/90 dark:text-foreground">
+        Creando experiencias
+    </span>
 
-
+    <span data-i18n="heroTitle2"
+          class="bg-gradient-to-r from-pastel-pink via-pastel-lavender to-pastel-mint
+                bg-clip-text text-transparent font-extrabold inline-block pb-7">
+        digitales
+    </span>
+    </h1>
 
     <!-- Tagline -->
     
-    <p class="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto mb-10">
+    <p data-i18n="heroSubtitle"
+    class="text-xl sm:text-2xl text-pastel-rose-600 max-w-3xl mx-auto mb-10">
       Diseño y desarrollo interfaces elegantes, funcionales y centradas en las personas.
     </p>
 
     <!-- Buttons -->
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a
+      <a data-i18n="viewProjects"
         href="/projects"
         class="inline-flex items-center gap-2
          rounded-full px-6 py-3
@@ -69,8 +71,9 @@ import Stat from './Stat.astro';
       </a>
 
       <a
+        data-i18n="contact"
         href="/contact"
-        class="inline-flex items-center justify-center px-8 py-3 rounded-full border border-pastel-pink/40 text-gray-700 hover:border-pastel-pink/70 transition"
+        class="inline-flex items-center justify-center px-8 py-3 rounded-full border border-pastel-pink/40 text-white-700 hover:border-pastel-pink/70 transition"
       >
         Contacto
       </a>
@@ -78,10 +81,11 @@ import Stat from './Stat.astro';
 
     <!-- Stats -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20">
-      <Stat value="15+" label="Proyectos" />
-      <Stat value="3+" label="Años de experiencia" />
-      <Stat value="20+" label="Tecnologías" />
-      <Stat value="30+" label="Clientes" />
+      <Stat value="15+" labelKey="statProjects" />
+      <Stat value="3+" labelKey="statExperience" />
+      <Stat value="20+" labelKey="statTech" />
+      <Stat value="30+" labelKey="statClients" />
+
     </div>
   </div>
 </section>

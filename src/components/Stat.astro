@@ -1,11 +1,11 @@
 ---
-const { value, label } = Astro.props
+const { value, labelKey } = Astro.props
 ---
-<div class="bg-card/70 backdrop-blur border border-pastel-pink/20 rounded-2xl p-6 hover:border-pastel-pink/40 transition">
+<div class="bg-card/70 dark:bg-card/80 backdrop-blur border border-pastel-pink/20 rounded-2xl p-6 hover:border-pastel-pink/40 transition">
   <div class="text-4xl font-serif text-pastel-pink mb-2">
     {value}
   </div>
-  <div class="text-sm text-gray-600">
-    {label}
+  <div class="text-sm text-gray-600"
+       data-i18n={labelKey}>  
   </div>
 </div>

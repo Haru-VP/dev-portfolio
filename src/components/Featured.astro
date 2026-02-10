@@ -1,43 +1,47 @@
 ---
-import FeatureCard from "./FeatureCard.astro"
+import FeatureCard from "./FeatureCard.astro";
 ---
 
-<section class="py-32 px-6">
+<section class="py-12 px-6 bg-background transition-colors">
   <div class="max-w-6xl mx-auto">
 
     <!-- Header -->
     <div class="text-center mb-20">
-      <h2 class="font-serif text-5xl font-bold mb-4 text-gray-800">
-        Lo que hago
-      </h2>
-      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-        Combino diseño y desarrollo para crear experiencias digitales claras,
-        atractivas y funcionales.
-      </p>
+      <h2
+        class="font-serif text-5xl font-bold mb-4 text-pastel-rose-800"
+        data-i18n="featuredTitle"
+      ></h2>
+
+      <p
+        class="text-lg text-white-600 max-w-2xl mx-auto"
+        data-i18n="featuredSubtitle"
+      ></p>
     </div>
 
     <!-- Cards -->
     <div class="grid gap-10 md:grid-cols-3">
+
       <FeatureCard
-        title="Frontend"
-        description="Interfaces modernas, accesibles y con foco en experiencia de usuario."
+        titleKey="featureFrontendTitle"
+        descKey="featureFrontendDesc"
         color="#F4A7C1"
         icon="</>"
       />
 
       <FeatureCard
-        title="Backend"
-        description="Lógica, APIs y estructuras que sostienen productos escalables."
+        titleKey="featureBackendTitle"
+        descKey="featureBackendDesc"
         color="#E9C9FF"
         icon="{}"
       />
 
       <FeatureCard
-        title="Diseño"
-        description="Estética cuidada, jerarquía visual y atención al detalle."
+        titleKey="featureDesignTitle"
+        descKey="featureDesignDesc"
         color="#9BE4C3"
         icon="✦"
       />
+
     </div>
   </div>
 </section>

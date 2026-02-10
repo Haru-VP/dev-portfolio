@@ -1,30 +1,233 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro"
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const skills = [
+  { name: "JavaScript/TypeScript", level: 95 },
+  { name: "React/Next.js", level: 90 },
+  { name: "Node.js/Express", level: 85 },
+  { name: "Python", level: 80 },
+  { name: "SQL/NoSQL", level: 85 },
+  { name: "Git/GitHub", level: 90 },
+];
+
+const education = [
+  {
+    degreeKey: "aboutDegree1",
+    institutionKey: "aboutInstitution1",
+    descKey: "aboutDesc1",
+    year: "2020 - 2024",
+  },
+  {
+    degreeKey: "aboutDegree2",
+    institutionKey: "aboutInstitution2",
+    descKey: "aboutDesc2",
+    year: "2023",
+  },
+  {
+    degreeKey: "aboutDegree3",
+    institutionKey: "aboutInstitution3",
+    descKey: "aboutDesc3",
+    year: "2024",
+  },
+];
+
+const interests = [
+  {
+    icon: "💻",
+    titleKey: "aboutInterest1",
+    descKey: "aboutInterest1Desc",
+  },
+  {
+    icon: "📚",
+    titleKey: "aboutInterest2",
+    descKey: "aboutInterest2Desc",
+  },
+  {
+    icon: "☕",
+    titleKey: "aboutInterest3",
+    descKey: "aboutInterest3Desc",
+  },
+  {
+    icon: "🎵",
+    titleKey: "aboutInterest4",
+    descKey: "aboutInterest4Desc",
+  },
+];
 ---
 
-<BaseLayout>
-  <section class="px-6 py-32 max-w-4xl mx-auto">
-    <h1 class="mb-12 font-serif text-5xl">
-      <span class="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
-        Sobre mí
-      </span>
-    </h1>
+<BaseLayout title="Sobre mí | Valen Pinto">
+  <div class="min-h-screen py-20 px-4 sm:px-6 lg:px-8 pt-28">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Header -->
+      <div class="text-center mb-16 animate-fade-in">
+        <div class="flex items-center justify-center mb-4">
+          <span class="text-2xl mr-2">❤️</span>
+          <span class="text-pastel-pink font-medium" data-i18n="navAbout">Sobre mí</span>
+        </div>
+        <h1 class="text-5xl sm:text-6xl font-bold text-foreground mb-4 font-serif" data-i18n="aboutTitle">
+          Sobre mí
+        </h1>
+        <p class="text-foreground/60 text-lg max-w-2xl mx-auto" data-i18n="aboutSubtitle">
+          Diseñadora y desarrolladora enfocada en crear experiencias digitales con intención.
+        </p>
+      </div>
 
-    <div class="space-y-6 text-gray-600 leading-relaxed">
-      <p>
-        Soy desarrolladora de software con una fuerte sensibilidad por el diseño
-        y la experiencia de usuario.
-      </p>
+      <!-- About Me Section -->
+      <div class="mb-20 animate-fade-in-delay">
+        <div 
+          class="bg-card/60 backdrop-blur-sm border border-pastel-pink/20 rounded-2xl p-8 lg:p-12 hover:border-pastel-pink/40 transition-all"
+          style="box-shadow: 0 10px 40px rgba(244, 167, 193, 0.1)"
+        >
+          <p class="text-foreground/80 text-lg leading-relaxed mb-6" data-i18n="aboutBio1">
+            Soy desarrolladora de software con una fuerte sensibilidad por el diseño y la experiencia de usuario. Me apasiona crear interfaces que se sientan ligeras, claras y humanas, donde la estética no compite con la funcionalidad.
+          </p>
+          <p class="text-foreground/80 text-lg leading-relaxed" data-i18n="aboutBio2">
+            Trabajo principalmente con tecnologías modernas como React, TypeScript, Node.js y bases de datos SQL/NoSQL. Siempre estoy aprendiendo nuevas herramientas y mejorando mis habilidades para crear mejores experiencias digitales.
+          </p>
+        </div>
+      </div>
 
-      <p>
-        Me gusta crear interfaces que se sientan ligeras, claras y humanas,
-        donde la estética no compite con la funcionalidad.
-      </p>
+      <!-- Education Section -->
+      <div class="mb-20">
+        <div class="flex items-center mb-8">
+          <span class="text-pastel-pink mr-3 text-3xl">🎓</span>
+          <h2 class="text-4xl font-bold text-foreground font-serif" data-i18n="aboutEducation">Educación</h2>
+        </div>
+        <div class="space-y-6">
+          {education.map((edu, index) => (
+            <div 
+              class="education-card bg-card/60 backdrop-blur-sm border border-pastel-lavender/30 rounded-2xl p-6 hover:border-pastel-lavender/50 transition-all hover:shadow-lg"
+              style={`animation-delay: ${index * 0.1}s`}
+            >
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+                <h3 class="text-xl font-semibold text-foreground font-serif" data-i18n={edu.degreeKey}>
+                  Ingeniería en Sistemas Computacionales
+                </h3>
+                <span class="text-pastel-pink font-medium">{edu.year}</span>
+              </div>
+              <p class="text-foreground/80 mb-2" data-i18n={edu.institutionKey}>
+                Universidad Tecnológica
+              </p>
+              <p class="text-foreground/60 text-sm" data-i18n={edu.descKey}>
+                Formación integral en desarrollo de software, algoritmos y estructuras de datos.
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
 
-      <p>
-        Trabajo principalmente con tecnologías modernas como Astro,
-        Tailwind y React.
-      </p>
+      <!-- Skills Section -->
+      <div class="mb-20">
+        <div class="flex items-center mb-8">
+          <span class="text-pastel-pink mr-3 text-3xl">💻</span>
+          <h2 class="text-4xl font-bold text-foreground font-serif" data-i18n="aboutSkills">Habilidades Técnicas</h2>
+        </div>
+        <div 
+          class="bg-card/60 backdrop-blur-sm border border-pastel-pink/20 rounded-2xl p-8"
+          style="box-shadow: 0 10px 40px rgba(244, 167, 193, 0.1)"
+        >
+          <div class="grid md:grid-cols-2 gap-6">
+            {skills.map((skill, index) => (
+              <div class="skill-item" style={`animation-delay: ${index * 0.1}s`}>
+                <div class="flex justify-between mb-2">
+                  <span class="text-foreground font-medium">{skill.name}</span>
+                  <span class="text-pastel-pink">{skill.level}%</span>
+                </div>
+                <div class="h-3 bg-muted rounded-full overflow-hidden">
+                  <div 
+                    class="skill-bar h-full bg-gradient-to-r from-pastel-pink via-pastel-lavender to-pastel-mint rounded-full"
+                    style={`width: ${skill.level}%`}
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Interests Section -->
+      <div>
+        <div class="flex items-center mb-8">
+          <span class="text-pastel-pink mr-3 text-3xl">❤️</span>
+          <h2 class="text-4xl font-bold text-foreground font-serif" data-i18n="aboutInterests">Intereses</h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          {interests.map((interest, index) => (
+            <div 
+              class="interest-card bg-card/60 backdrop-blur-sm border border-pastel-mint/30 rounded-2xl p-6 hover:border-pastel-mint/50 transition-all hover:shadow-lg hover:scale-105"
+              style={`animation-delay: ${index * 0.1}s`}
+            >
+              <div class="text-4xl mb-4">{interest.icon}</div>
+              <h3 class="text-xl font-semibold text-foreground mb-2 font-serif" data-i18n={interest.titleKey}>
+                Desarrollo de Software
+              </h3>
+              <p class="text-foreground/60" data-i18n={interest.descKey}>
+                Me encanta resolver problemas complejos y crear soluciones elegantes.
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
 </BaseLayout>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fill-bar {
+    from {
+      width: 0;
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out;
+  }
+
+  .animate-fade-in-delay {
+    animation: fade-in 0.6s ease-out 0.2s both;
+  }
+
+  .education-card {
+    animation: slide-in-left 0.6s ease-out both;
+  }
+
+  .skill-item {
+    animation: fade-in 0.6s ease-out both;
+  }
+
+  .skill-bar {
+    animation: fill-bar 1s ease-out both;
+  }
+
+  .interest-card {
+    animation: fade-in 0.6s ease-out both;
+    transition: all 0.3s ease;
+  }
+
+  .interest-card:hover {
+    transform: scale(1.03);
+  }
+</style>

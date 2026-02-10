@@ -1,30 +1,191 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro"
-import ProjectCard from "../components/ProjectCard.astro"
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const projects = [
+  {
+    id: 1,
+    titleEs: "Plataforma E-Commerce",
+    titleEn: "E-Commerce Platform",
+    descriptionEs: "Plataforma de comercio electrónico completa con carrito de compras, pagos y panel de administración.",
+    descriptionEn: "Complete e-commerce platform with shopping cart, payments and admin panel.",
+    image: "https://images.unsplash.com/photo-1762242298589-582f5f6c3fb1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080&q=80",
+    tags: ["React", "Node.js", "MongoDB", "Stripe"],
+    demoUrl: "#",
+    githubUrl: "#",
+  },
+  {
+    id: 2,
+    titleEs: "App de Gestión de Tareas",
+    titleEn: "Task Management App",
+    descriptionEs: "Aplicación de gestión de tareas con colaboración en tiempo real y notificaciones push.",
+    descriptionEn: "Task management application with real-time collaboration and push notifications.",
+    image: "https://images.unsplash.com/photo-1653053151840-a35f2002a2fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080&q=80",
+    tags: ["TypeScript", "Next.js", "PostgreSQL", "Socket.io"],
+    demoUrl: "#",
+    githubUrl: "#",
+  },
+  {
+    id: 3,
+    titleEs: "Generador de Portafolios",
+    titleEn: "Portfolio Generator",
+    descriptionEs: "Herramienta para crear portafolios personalizados con plantillas prediseñadas y exportación a código.",
+    descriptionEn: "Tool to create custom portfolios with pre-designed templates and code export.",
+    image: "https://images.unsplash.com/photo-1573495611823-5397efa4fac7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080&q=80",
+    tags: ["React", "Tailwind CSS", "Firebase"],
+    demoUrl: "#",
+    githubUrl: "#",
+  },
+  {
+    id: 4,
+    titleEs: "Dashboard Meteorológico",
+    titleEn: "Weather Dashboard",
+    descriptionEs: "Dashboard meteorológico con visualización de datos en tiempo real y predicciones de 7 días.",
+    descriptionEn: "Weather dashboard with real-time data visualization and 7-day forecasts.",
+    image: "https://images.unsplash.com/photo-1644088379091-d574269d422f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080&q=80",
+    tags: ["Vue.js", "Chart.js", "API REST"],
+    demoUrl: "#",
+    githubUrl: "#",
+  },
+  {
+    id: 5,
+    titleEs: "Analítica de Redes Sociales",
+    titleEn: "Social Media Analytics",
+    descriptionEs: "Herramienta de análisis de redes sociales con métricas detalladas y reportes personalizados.",
+    descriptionEn: "Social media analytics tool with detailed metrics and custom reports.",
+    image: "https://images.unsplash.com/photo-1762242298589-582f5f6c3fb1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080&q=80",
+    tags: ["React", "D3.js", "Express", "MySQL"],
+    demoUrl: "#",
+    githubUrl: "#",
+  },
+  {
+    id: 6,
+    titleEs: "Rastreador de Fitness",
+    titleEn: "Fitness Tracker",
+    descriptionEs: "Aplicación móvil para seguimiento de ejercicios, nutrición y progreso personal.",
+    descriptionEn: "Mobile app for tracking workouts, nutrition and personal progress.",
+    image: "https://images.unsplash.com/photo-1653053151840-a35f2002a2fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080&q=80",
+    tags: ["React Native", "Redux", "Firebase"],
+    demoUrl: "#",
+    githubUrl: "#",
+  },
+];
 ---
 
-<BaseLayout>
-  <section class="px-6 py-32 max-w-7xl mx-auto">
-    <h1 class="mb-16 font-serif text-5xl">
-      <span class="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
-        Proyectos
-      </span>
-    </h1>
+<BaseLayout title="Proyectos | Valen Pinto">
+  <div class="min-h-screen py-20 px-4 sm:px-6 lg:px-8 pt-28">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Header -->
+      <div class="text-center mb-16 animate-fade-in">
+        <div class="flex items-center justify-center mb-4">
+          <span class="text-2xl mr-2">✨</span>
+          <span class="text-pastel-pink font-medium" data-i18n="projectsTitle">Portfolio</span>
+        </div>
+        <h1 class="text-5xl sm:text-6xl font-bold text-foreground mb-4 font-serif" data-i18n="projectsTitle">
+          Proyectos
+        </h1>
+        <p class="text-foreground/60 text-lg max-w-2xl mx-auto" data-i18n="projectsSubtitle">
+          Una selección de trabajos donde diseño y desarrollo experiencias digitales.
+        </p>
+      </div>
 
-    <div class="grid gap-10 md:grid-cols-2">
-      <ProjectCard
-        title="Portfolio personal"
-        description="Diseño y desarrollo de un portfolio editorial con Astro y Tailwind."
-        image="/projects/portfolio.jpg"
-        href="#"
-      />
+      <!-- Projects Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {projects.map((project, index) => (
+          <div 
+            class="project-card group relative bg-card/60 backdrop-blur-sm border border-pastel-pink/20 rounded-2xl overflow-hidden hover:border-pastel-pink/40 transition-all hover:shadow-xl"
+            style={`animation-delay: ${index * 0.1}s`}
+          >
+            <!-- Project Image -->
+            <div class="relative h-48 overflow-hidden">
+              <img
+                src={project.image}
+                alt={project.titleEs}
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-card to-transparent opacity-80"></div>
+            </div>
 
-      <ProjectCard
-        title="Landing creativa"
-        description="Experiencia visual centrada en animaciones suaves y narrativa."
-        image="/projects/landing.jpg"
-        href="#"
-      />
+            <!-- Project Info -->
+            <div class="p-6">
+              <h3 class="text-2xl font-semibold text-foreground mb-2 font-serif project-title" data-title-es={project.titleEs} data-title-en={project.titleEn}>
+                {project.titleEs}
+              </h3>
+              <p class="text-foreground/60 text-sm mb-4 project-description" data-desc-es={project.descriptionEs} data-desc-en={project.descriptionEn}>
+                {project.descriptionEs}
+              </p>
+
+              <!-- Tags -->
+              <div class="flex flex-wrap gap-2 mb-4">
+                {project.tags.map((tag) => (
+                  <span class="px-3 py-1 bg-pastel-lavender/30 text-foreground text-xs rounded-full border border-pastel-lavender/40">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <!-- Links -->
+              <div class="flex gap-3">
+                <a
+                  href={project.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-pastel-pink to-pastel-lavender text-white text-sm rounded-full hover:shadow-lg transition-all"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                  <span data-i18n="projectsDemo">Ver demo</span>
+                </a>
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center gap-2 px-4 py-2 bg-card text-foreground text-sm rounded-full border border-pastel-pink/30 hover:border-pastel-pink/60 transition-colors"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                    <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                  </svg>
+                  <span data-i18n="projectsCode">Código</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Hover Effect -->
+            <div class="absolute inset-0 bg-gradient-to-r from-pastel-pink/5 to-pastel-lavender/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+          </div>
+        ))}
+      </div>
     </div>
-  </section>
+  </div>
 </BaseLayout>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out;
+  }
+
+  .project-card {
+    animation: fade-in 0.6s ease-out both;
+    box-shadow: 0 10px 40px rgba(244, 167, 193, 0.1);
+  }
+
+  .project-card:hover {
+    box-shadow: 0 20px 60px rgba(244, 167, 193, 0.2);
+  }
+</style>
