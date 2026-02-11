@@ -1,44 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-const contactInfo = [
-  {
-    icon: "📧",
-    labelKey: "contactEmail",
-    value: "tu.email@ejemplo.com",
-    link: "mailto:tu.email@ejemplo.com",
-  },
-  {
-    icon: "📱",
-    labelKey: "contactPhone",
-    value: "+1 (555) 123-4567",
-    link: "tel:+15551234567",
-  },
-  {
-    icon: "📍",
-    labelKey: "contactLocation",
-    value: "Ciudad, País",
-    link: null,
-  },
-];
-
-const socialLinks = [
-  {
-    icon: "github",
-    label: "GitHub",
-    url: "https://github.com/tuusuario",
-  },
-  {
-    icon: "linkedin",
-    label: "LinkedIn",
-    url: "https://linkedin.com/in/tuusuario",
-  },
-  {
-    icon: "twitter",
-    label: "Twitter",
-    url: "https://twitter.com/tuusuario",
-  },
-];
+import { contactInfo, socialLinks } from "../data/portfolio.js";
 ---
 
 <BaseLayout title="Contacto | Valen Pinto">
@@ -237,70 +199,12 @@ const socialLinks = [
 </BaseLayout>
 
 <style>
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes slide-in-left {
-    from {
-      opacity: 0;
-      transform: translateX(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes slide-in-right {
-    from {
-      opacity: 0;
-      transform: translateX(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  .animate-fade-in {
-    animation: fade-in 0.6s ease-out;
-  }
-
-  .animate-slide-in-left {
-    animation: slide-in-left 0.6s ease-out 0.2s both;
-  }
-
-  .animate-slide-in-right {
-    animation: slide-in-right 0.6s ease-out 0.4s both;
-  }
-
   .contact-card {
     animation: fade-in 0.6s ease-out both;
   }
 
   .social-link:hover {
     transform: scale(1.1) translateY(-5px);
-  }
-
-  @keyframes pulse {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.5;
-    }
-  }
-
-  .animate-pulse {
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 </style>
 
@@ -321,7 +225,8 @@ const socialLinks = [
     // Show loading state
     if (buttonText) {
       const lang = localStorage.getItem("lang") || "es";
-      buttonText.textContent = translations[lang].contactSending;
+      // @ts-ignore - translations has all required properties
+      buttonText.textContent = translations[lang as keyof typeof translations].contactSending;
     }
     button.disabled = true;
 
@@ -336,7 +241,8 @@ const socialLinks = [
       // Reset button
       if (buttonText) {
         const lang = localStorage.getItem("lang") || "es";
-        buttonText.textContent = translations[lang].contactSend;
+        // @ts-ignore - translations has all required properties
+        buttonText.textContent = translations[lang as keyof typeof translations].contactSend;
       }
       button.disabled = false;
 
@@ -353,8 +259,9 @@ const socialLinks = [
     
     document.querySelectorAll('[data-placeholder-key]').forEach(el => {
       const key = el.getAttribute('data-placeholder-key');
-      if (key && el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement) {
-        el.placeholder = translations[lang][key] || el.placeholder;
+      if (key && (el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement)) {
+        // @ts-ignore - translations has all required properties
+        el.placeholder = translations[lang as keyof typeof translations][key] || el.placeholder;
       }
     });
   }

@@ -1,58 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-const skills = [
-  { name: "JavaScript/TypeScript", level: 95 },
-  { name: "React/Next.js", level: 90 },
-  { name: "Node.js/Express", level: 85 },
-  { name: "Python", level: 80 },
-  { name: "SQL/NoSQL", level: 85 },
-  { name: "Git/GitHub", level: 90 },
-];
-
-const education = [
-  {
-    degreeKey: "aboutDegree1",
-    institutionKey: "aboutInstitution1",
-    descKey: "aboutDesc1",
-    year: "2020 - 2024",
-  },
-  {
-    degreeKey: "aboutDegree2",
-    institutionKey: "aboutInstitution2",
-    descKey: "aboutDesc2",
-    year: "2023",
-  },
-  {
-    degreeKey: "aboutDegree3",
-    institutionKey: "aboutInstitution3",
-    descKey: "aboutDesc3",
-    year: "2024",
-  },
-];
-
-const interests = [
-  {
-    icon: "💻",
-    titleKey: "aboutInterest1",
-    descKey: "aboutInterest1Desc",
-  },
-  {
-    icon: "📚",
-    titleKey: "aboutInterest2",
-    descKey: "aboutInterest2Desc",
-  },
-  {
-    icon: "☕",
-    titleKey: "aboutInterest3",
-    descKey: "aboutInterest3Desc",
-  },
-  {
-    icon: "🎵",
-    titleKey: "aboutInterest4",
-    descKey: "aboutInterest4Desc",
-  },
-];
+import { skills, education, interests } from "../data/portfolio.js";
 ---
 
 <BaseLayout title="Sobre mí | Valen Pinto">
@@ -174,42 +122,6 @@ const interests = [
 </BaseLayout>
 
 <style>
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes slide-in-left {
-    from {
-      opacity: 0;
-      transform: translateX(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes fill-bar {
-    from {
-      width: 0;
-    }
-  }
-
-  .animate-fade-in {
-    animation: fade-in 0.6s ease-out;
-  }
-
-  .animate-fade-in-delay {
-    animation: fade-in 0.6s ease-out 0.2s both;
-  }
-
   .education-card {
     animation: slide-in-left 0.6s ease-out both;
   }
