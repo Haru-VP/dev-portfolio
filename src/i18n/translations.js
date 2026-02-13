@@ -7,7 +7,7 @@ export const translations = {
     navContact: "Contacto",
 
     /* ===== HERO ===== */
-    heroRole: "Frontend Developer",
+    heroRole: "Desarrolladora Frontend",
     heroTitle1: "Creando experiencias",
     heroTitle2: "digitales",
     heroSubtitle:

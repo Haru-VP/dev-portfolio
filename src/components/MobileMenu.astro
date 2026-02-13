@@ -1,0 +1,80 @@
+---
+// MobileMenu.astro - Mobile navigation menu with overlay
+---
+
+<div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+  <!-- Backdrop overlay -->
+  <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+  
+  <!-- Menu content -->
+  <nav class="mobile-menu-content" role="navigation" aria-label="Mobile navigation">
+    <!-- Header with logo and close button -->
+    <div class="mobile-menu-header">
+      <a href="/" class="flex items-center gap-3">
+        <div
+          class="h-9 w-9 rounded-full bg-gradient-to-br from-pastel-pink to-pastel-lavender
+                 flex items-center justify-center text-white font-semibold shadow-md"
+        >
+          V
+        </div>
+        <span class="font-serif italic text-xl text-gray-800 dark:text-pink-100">
+          Valen Pinto
+        </span>
+      </a>
+      
+      <button
+        id="mobile-menu-close"
+        aria-label="Close menu"
+        class="mobile-menu-close"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Navigation links -->
+    <div class="mobile-menu-links">
+      <a data-i18n="navHome" href="/" class="mobile-menu-link">
+        Inicio
+      </a>
+      <a data-i18n="navProjects" href="/projects" class="mobile-menu-link">
+        Proyectos
+      </a>
+      <a data-i18n="navAbout" href="/about" class="mobile-menu-link">
+        Sobre mí
+      </a>
+      <a data-i18n="navContact" href="/contact" class="mobile-menu-link mobile-menu-link-primary">
+        Contacto
+      </a>
+    </div>
+
+    <!-- Controls (dark mode and language) -->
+    <div class="mobile-menu-controls">
+      <div class="mobile-menu-control-group">
+        <span class="mobile-menu-control-label">Tema</span>
+        <button
+          id="mobile-theme-toggle"
+          aria-label="Toggle dark mode"
+          class="mobile-menu-control-button"
+        >
+          <span class="mobile-theme-icon">🌙</span>
+          <span class="mobile-theme-text">Modo oscuro</span>
+        </button>
+      </div>
+
+      <div class="mobile-menu-control-group">
+        <span class="mobile-menu-control-label">Idioma</span>
+        <div class="mobile-menu-lang-buttons">
+          <button data-lang="es" class="mobile-menu-lang-button">
+            ES
+          </button>
+          <button data-lang="en" class="mobile-menu-lang-button">
+            EN
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>

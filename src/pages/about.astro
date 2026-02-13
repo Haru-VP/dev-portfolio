@@ -4,7 +4,7 @@ import { skills, education, interests } from "../data/portfolio.js";
 ---
 
 <BaseLayout title="Sobre mí | Valen Pinto">
-  <div class="min-h-screen py-20 px-4 sm:px-6 lg:px-8 pt-28">
+  <div class="min-h-screen py-12 md:py-20 px-4 sm:px-6 lg:px-8 pt-20 md:pt-28">
     <div class="max-w-7xl mx-auto">
       
       <!-- Header -->
@@ -24,7 +24,7 @@ import { skills, education, interests } from "../data/portfolio.js";
       <!-- About Me Section -->
       <div class="mb-20 animate-fade-in-delay">
         <div 
-          class="bg-card/60 backdrop-blur-sm border border-pastel-pink/20 rounded-2xl p-8 lg:p-12 hover:border-pastel-pink/40 transition-all"
+          class="bg-card/60 backdrop-blur-sm border border-pastel-pink/20 rounded-2xl p-6 lg:p-12 hover:border-pastel-pink/40 transition-all"
           style="box-shadow: 0 10px 40px rgba(244, 167, 193, 0.1)"
         >
           <p class="text-foreground/80 text-lg leading-relaxed mb-6" data-i18n="aboutBio1">
@@ -75,7 +75,7 @@ import { skills, education, interests } from "../data/portfolio.js";
           class="bg-card/60 backdrop-blur-sm border border-pastel-pink/20 rounded-2xl p-8"
           style="box-shadow: 0 10px 40px rgba(244, 167, 193, 0.1)"
         >
-          <div class="grid md:grid-cols-2 gap-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             {skills.map((skill, index) => (
               <div class="skill-item" style={`animation-delay: ${index * 0.1}s`}>
                 <div class="flex justify-between mb-2">
@@ -100,7 +100,7 @@ import { skills, education, interests } from "../data/portfolio.js";
           <span class="text-pastel-pink mr-3 text-3xl">❤️</span>
           <h2 class="text-4xl font-bold text-foreground font-serif" data-i18n="aboutInterests">Intereses</h2>
         </div>
-        <div class="grid md:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           {interests.map((interest, index) => (
             <div 
               class="interest-card bg-card/60 backdrop-blur-sm border border-pastel-mint/30 rounded-2xl p-6 hover:border-pastel-mint/50 transition-all hover:shadow-lg hover:scale-105"

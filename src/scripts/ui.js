@@ -1,4 +1,5 @@
 import { translations } from "../i18n/translations";
+import { initMobileMenu } from "./mobile-menu";
 
 let currentLang = localStorage.getItem("lang") || "es";
 
@@ -70,10 +71,17 @@ function initThemeToggle() {
 // Initialize on first load
 initLanguage();
 initThemeToggle();
+initMobileMenu();
 
 // Re-initialize after View Transitions navigation
 document.addEventListener('astro:after-swap', () => {
   applyTheme(); // Apply theme immediately after navigation
   initLanguage();
   initThemeToggle();
+  initMobileMenu();
+});
+
+// Listen for language change events from mobile menu
+document.addEventListener('languageChange', (e) => {
+  setLanguage(e.detail.lang);
 });

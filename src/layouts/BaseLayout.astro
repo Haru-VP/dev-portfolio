@@ -2,7 +2,6 @@
 import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
-import { ViewTransitions } from 'astro:transitions';
 
 const { 
   title = "Valen Pinto | Portfolio",
@@ -20,7 +19,7 @@ const ogImageURL = Astro.site
 ---
 
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es" class="scroll-smooth" transition:animate="fade">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -42,8 +41,6 @@ const ogImageURL = Astro.site
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={ogImageURL} />
-
-    <ViewTransitions />
 
     <!-- Prevent FOUC (Flash of Unstyled Content) for dark mode -->
     <script is:inline>
@@ -67,7 +64,9 @@ const ogImageURL = Astro.site
     </main>
 
     <Footer />
-    <script type="module" src="/src/scripts/ui.js"></script>
+    <script>
+      import '../scripts/ui.js';
+    </script>
 
   </body>
 </html>

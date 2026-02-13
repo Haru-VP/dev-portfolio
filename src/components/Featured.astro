@@ -2,24 +2,24 @@
 import FeatureCard from "./FeatureCard.astro";
 ---
 
-<section class="py-12 px-6 bg-background transition-colors">
+<section class="py-12 md:py-20 px-6 bg-background transition-colors">
   <div class="max-w-6xl mx-auto">
 
     <!-- Header -->
-    <div class="text-center mb-20">
+    <div class="text-center mb-12 md:mb-20">
       <h2
-        class="font-serif text-5xl font-bold mb-4 text-pastel-rose-800"
+        class="font-serif text-4xl md:text-5xl font-bold mb-4 text-pastel-rose-800"
         data-i18n="featuredTitle"
       ></h2>
 
       <p
-        class="text-lg text-white-600 max-w-2xl mx-auto"
+        class="text-base md:text-lg text-white-600 max-w-2xl mx-auto"
         data-i18n="featuredSubtitle"
       ></p>
     </div>
 
     <!-- Cards -->
-    <div class="grid gap-10 md:grid-cols-3">
+    <div class="grid gap-6 md:gap-10 md:grid-cols-3">
 
       <FeatureCard
         titleKey="featureFrontendTitle"
