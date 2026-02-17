@@ -9,7 +9,7 @@ export const projects = [
     descriptionEn: "Web application to generate custom PDF documents with dynamic forms and real-time preview.",
     image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&q=80&fm=webp",
     tags: ["JavaScript", "HTML", "CSS", "PDF.js"],
-    demoUrl: "https://github.com/Haru-VP/Generador_PDF",
+    demoUrl: "https://res.cloudinary.com/dlvmueihc/image/upload/Captura_de_pantalla_2026-02-16_195453_y5sajn",
     githubUrl: "https://github.com/Haru-VP/Generador_PDF",
   },
   {
@@ -20,7 +20,7 @@ export const projects = [
     descriptionEn: "Interactive application for secret friend draws with name validation and participant management.",
     image: "https://images.unsplash.com/photo-1513885535751-8b9238bd345a?w=800&q=80&fm=webp",
     tags: ["JavaScript", "HTML", "CSS", "DOM"],
-    demoUrl: "https://github.com/Haru-VP/engeAmigoSecreto",
+    demoUrl: "https://res.cloudinary.com/dlvmueihc/image/upload/Captura_de_pantalla_2026-02-16_193718_j81o0l",
     githubUrl: "https://github.com/Haru-VP/engeAmigoSecreto",
   },
   {
