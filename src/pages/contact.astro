@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { contactInfo, socialLinks } from "../data/portfolio.js";
 ---
 
-<BaseLayout title="Contacto | Valen Pinto">
+<BaseLayout title="Contacto | Valentina Pinto">
   <div class="min-h-screen py-12 md:py-20 px-4 sm:px-6 lg:px-8 pt-20 md:pt-28">
     <div class="max-w-7xl mx-auto">
       
@@ -25,7 +25,7 @@ import { contactInfo, socialLinks } from "../data/portfolio.js";
         
         <!-- Contact Form -->
         <div class="animate-slide-in-left">
-          <form id="contact-form" class="space-y-6">
+          <form action="https://formspree.io/f/mnjbvzgl" method="POST" class="space-y-6">
             <div>
               <label for="name" class="block text-foreground mb-2 font-medium" data-i18n="contactName">
                 Nombre
@@ -97,11 +97,6 @@ import { contactInfo, socialLinks } from "../data/portfolio.js";
               </svg>
               <span data-i18n="contactSend">Enviar mensaje</span>
             </button>
-
-            <!-- Success Message -->
-            <div id="success-message" class="hidden p-4 bg-pastel-mint/20 border border-pastel-mint/50 rounded-xl text-foreground text-center">
-              <span data-i18n="contactSuccess">¡Mensaje enviado con éxito! Te responderé pronto.</span>
-            </div>
           </form>
         </div>
 
@@ -167,6 +162,11 @@ import { contactInfo, socialLinks } from "../data/portfolio.js";
                       <circle cx="4" cy="4" r="2"></circle>
                     </svg>
                   )}
+                  {social.icon === "whatsapp" && (
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                    </svg>
+                  )}
                   {social.icon === "twitter" && (
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                       <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
@@ -210,48 +210,6 @@ import { contactInfo, socialLinks } from "../data/portfolio.js";
 
 <script>
   import { translations } from "../i18n/translations";
-
-  // Handle form submission
-  const form = document.getElementById('contact-form') as HTMLFormElement;
-  const successMessage = document.getElementById('success-message');
-
-  form?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    const button = form.querySelector('button[type="submit"]') as HTMLButtonElement;
-    const buttonText = button.querySelector('span');
-    const originalText = buttonText?.textContent || '';
-    
-    // Show loading state
-    if (buttonText) {
-      const lang = localStorage.getItem("lang") || "es";
-      // @ts-ignore - translations has all required properties
-      buttonText.textContent = translations[lang as keyof typeof translations].contactSending;
-    }
-    button.disabled = true;
-
-    // Simulate form submission (replace with actual API call)
-    setTimeout(() => {
-      // Reset form
-      form.reset();
-      
-      // Show success message
-      successMessage?.classList.remove('hidden');
-      
-      // Reset button
-      if (buttonText) {
-        const lang = localStorage.getItem("lang") || "es";
-        // @ts-ignore - translations has all required properties
-        buttonText.textContent = translations[lang as keyof typeof translations].contactSend;
-      }
-      button.disabled = false;
-
-      // Hide success message after 5 seconds
-      setTimeout(() => {
-        successMessage?.classList.add('hidden');
-      }, 5000);
-    }, 1500);
-  });
 
   // Update placeholders on language change
   function updatePlaceholders() {

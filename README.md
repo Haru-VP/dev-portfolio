@@ -1,118 +1,90 @@
-# Astro Starter Kit: Minimal
+# Portfolio Personal - Valentina Pinto
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Portfolio profesional desarrollado con Astro, Tailwind CSS y JavaScript. Diseño minimalista con paleta de colores pastel, soporte multiidioma (ES/EN) y modo oscuro.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-## 🚀 Project Structure
+## 🚀 Características
 
-Inside of your Astro project, you'll see the following folders and files:
+- ✨ Diseño moderno y minimalista con colores pastel
+- 🌓 Modo oscuro/claro con persistencia
+- 🌍 Soporte multiidioma (Español/Inglés)
+- 📱 Completamente responsive
+- ⚡ Optimizado para rendimiento
+- 🎨 Animaciones suaves y transiciones
+- ♿ Accesible (ARIA labels, navegación por teclado)
+- 🔍 SEO optimizado con meta tags
+
+## 🛠️ Tecnologías
+
+- [Astro](https://astro.build) - Framework web moderno
+- [Tailwind CSS](https://tailwindcss.com) - Framework CSS utility-first
+- JavaScript (ES6+)
+- Google Fonts (Playfair Display, Poppins, Dancing Script)
+
+## 📁 Estructura del Proyecto
 
 ```text
 /
 ├── public/
+│   ├── favicon.svg
+│   └── favicon.ico
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── components/      # Componentes reutilizables
+│   ├── data/           # Datos del portfolio
+│   ├── i18n/           # Traducciones
+│   ├── layouts/        # Layouts de página
+│   ├── pages/          # Páginas del sitio
+│   ├── scripts/        # JavaScript del cliente
+│   └── styles/         # Estilos globales
+├── astro.config.mjs    # Configuración de Astro
+├── tailwind.config.mjs # Configuración de Tailwind
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🧞 Comandos
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Todos los comandos se ejecutan desde la raíz del proyecto:
 
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
+| Comando                   | Acción                                           |
 | :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| `npm install`             | Instala las dependencias                         |
+| `npm run dev`             | Inicia servidor local en `localhost:4321`        |
+| `npm run build`           | Construye el sitio para producción en `./dist/`  |
+| `npm run preview`         | Vista previa del build localmente                |
+| `npm run astro ...`       | Ejecuta comandos CLI de Astro                    |
 
-## 🚀 Deployment to Vercel
+## 🚀 Deployment a Vercel
 
-This project is configured for deployment to Vercel with optimal settings for Astro.
+Este proyecto está configurado para deployment óptimo en Vercel.
 
-### Prerequisites
 
-- A [Vercel account](https://vercel.com/signup)
-- Git repository (GitHub, GitLab, or Bitbucket)
+### Deployment Continuo
 
-### Deployment Steps
+Una vez conectado a Vercel:
+- Cada push a tu rama principal activa un deployment de producción
+- Los pull requests crean deployments de preview automáticamente
+- Puedes ver logs y estado en el dashboard de Vercel
 
-1. **Push your code to a Git repository** (if not already done)
+### Traducciones
 
-2. **Import to Vercel:**
-   - Go to [Vercel Dashboard](https://vercel.com/dashboard)
-   - Click "Add New Project"
-   - Import your Git repository
-   - Vercel will auto-detect the Astro framework
+Edita `src/i18n/translations.js` para modificar textos en español e inglés.
 
-3. **Configure (if needed):**
-   - Framework Preset: Astro (auto-detected)
-   - Build Command: `npm run build` (auto-configured)
-   - Output Directory: `dist` (auto-configured)
-   - Install Command: `npm install` (auto-configured)
+## ⚡ Optimizaciones Implementadas
 
-4. **Deploy:**
-   - Click "Deploy"
-   - Vercel will build and deploy your site
-   - You'll get a production URL (e.g., `your-project.vercel.app`)
+- ✅ Configuración unificada de Tailwind
+- ✅ URL del sitio configurada para SEO
+- ✅ Iconos SVG para theme toggle
+- ✅ Preconnect para Google Fonts
+- ✅ Imágenes optimizadas con formato WebP
+- ✅ Variables CSS consistentes
+- ✅ Build sin errores
 
-### Environment Variables
+## 📝 Licencia
 
-This project currently does not require any environment variables. If you need to add environment variables in the future:
+Este proyecto es de código abierto y está disponible bajo la licencia MIT.
 
-1. Go to your project settings in Vercel
-2. Navigate to "Environment Variables"
-3. Add your variables for Production, Preview, and Development environments
+## 👀 Más Información
 
-### Vercel Configuration
-
-The `vercel.json` file in the root directory contains the deployment configuration:
-
-```json
-{
-  "framework": "astro",
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist"
-}
-```
-
-### Local Build Testing
-
-Before deploying, test the production build locally:
-
-```sh
-npm run build
-npm run preview
-```
-
-This ensures your site builds correctly and works as expected in production mode.
-
-### Continuous Deployment
-
-Once connected to Vercel:
-- Every push to your main branch triggers a production deployment
-- Pull requests create preview deployments automatically
-- You can view deployment logs and status in the Vercel dashboard
-
-### Custom Domain
-
-To add a custom domain:
-1. Go to your project settings in Vercel
-2. Navigate to "Domains"
-3. Add your custom domain and follow the DNS configuration instructions
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- [Documentación de Astro](https://docs.astro.build)
+- [Discord de Astro](https://astro.build/chat)
+- [Documentación de Tailwind CSS](https://tailwindcss.com/docs)

@@ -7,11 +7,11 @@ export const translations = {
     navContact: "Contacto",
 
     /* ===== HERO ===== */
-    heroRole: "Desarrolladora Frontend",
-    heroTitle1: "Creando experiencias",
-    heroTitle2: "digitales",
+    heroRole: "Desarrolladora de Software",
+    heroTitle1: "Hola, soy",
+    heroTitle2: "Valentina Pinto",
     heroSubtitle:
-      "Diseño y desarrollo interfaces elegantes, funcionales y centradas en las personas.",
+      "Diseño y desarrollo soluciones digitales elegantes, funcionales y centradas en las personas.",
     viewProjects: "Ver proyectos",
     contact: "Contacto",
 
@@ -41,51 +41,41 @@ export const translations = {
     /* ===== ABOUT ===== */
     aboutTitle: "Sobre mí",
     aboutSubtitle:
-      "Diseñadora y desarrolladora enfocada en crear experiencias digitales con intención.",
-    aboutParagraph1:
-      "Soy frontend developer con pasión por el diseño, la accesibilidad y el detalle.",
-    aboutParagraph2:
-      "Me gusta construir interfaces limpias, claras y agradables de usar.",
-    aboutParagraph3:
-      "Siempre busco equilibrar estética, funcionalidad y rendimiento.",
+      "Desarrolladora de software curiosa y versátil, apasionada por crear experiencias digitales con propósito.",
     aboutBio1:
-      "Soy desarrolladora de software con una fuerte sensibilidad por el diseño y la experiencia de usuario. Me apasiona crear interfaces que se sientan ligeras, claras y humanas, donde la estética no compite con la funcionalidad.",
+      "Soy estudiante de Ingeniería Informática en la Corporación Universitaria Autónoma de Nariño, finalizando mis estudios en diciembre de 2025. Mi proyecto de tesis explora visión por computadora y reconocimiento facial usando Python, OpenCV y TensorFlow, incluyendo la construcción de un mini robot para demostrar estas capacidades.",
     aboutBio2:
-      "Trabajo principalmente con tecnologías modernas como React, TypeScript, Node.js y bases de datos SQL/NoSQL. Siempre estoy aprendiendo nuevas herramientas y mejorando mis habilidades para crear mejores experiencias digitales.",
+      "Tengo experiencia profesional desarrollando aplicaciones con Python para gestión multimedia bajo contrato formal. Me he capacitado en tecnologías modernas como IA Generativa, Frameworks de JavaScript, Docker y AWS S3. Me apasiona aprender nuevas tecnologías y resolver problemas complejos con soluciones elegantes.",
     aboutEducation: "Educación",
     aboutSkills: "Habilidades Técnicas",
-    aboutInterests: "Intereses",
-    aboutDegree1: "Ingeniería en Sistemas Computacionales",
-    aboutInstitution1: "Universidad Tecnológica",
-    aboutDesc1: "Formación integral en desarrollo de software, algoritmos y estructuras de datos.",
-    aboutDegree2: "Certificación en Desarrollo Web Full Stack",
-    aboutInstitution2: "Platzi",
-    aboutDesc2: "Especialización en tecnologías web modernas y mejores prácticas de desarrollo.",
-    aboutDegree3: "Curso de UI/UX Design",
-    aboutInstitution3: "Coursera",
-    aboutDesc3: "Fundamentos de diseño de interfaces y experiencia de usuario.",
-    aboutInterest1: "Desarrollo de Software",
-    aboutInterest1Desc: "Me encanta resolver problemas complejos y crear soluciones elegantes.",
-    aboutInterest2: "Lectura Técnica",
-    aboutInterest2Desc: "Siempre aprendiendo sobre nuevas tecnologías y mejores prácticas.",
-    aboutInterest3: "Café y Código",
-    aboutInterest3Desc: "Mi combinación perfecta para sesiones productivas de programación.",
-    aboutInterest4: "Música",
-    aboutInterest4Desc: "La música me ayuda a concentrarme y mantener la creatividad fluyendo.",
+    aboutInterests: "Experiencia",
+    aboutExperience: "Experiencia",
+    aboutCertifications: "Certificaciones",
+    aboutDegree1: "Ingeniería Informática",
+    aboutInstitution1: "Corporación Universitaria Autónoma de Nariño - Pasto, NAR",
+    aboutDesc1: "Carrera universitaria de ingeniería. Agosto 2022 - Diciembre 2025. Proyecto de tesis: Sistema de reconocimiento facial con visión por computadora y robótica.",
+    aboutDegree2: "Diplomado en Desarrollo de Software",
+    aboutInstitution2: "Universidad de Caldas - Manizales, CAL",
+    aboutDesc2: "Desarrollo de aplicaciones web y programación. MISIÓN TIC 2022. Julio 2022 - Diciembre 2022.",
+    aboutDegree3: "Certificaciones Técnicas",
+    aboutInstitution3: "Formación Continua 2024-2025",
+    aboutDesc3: "IA Generativa, Frameworks de JavaScript, Docker, AWS S3 y tecnologías cloud modernas.",
+    aboutInterest1: "Desarrollo de Aplicación Multimedia",
+    aboutInterest1Desc: "Experiencia profesional con contrato formal desarrollando aplicación con Python para gestión multimedia.",
+    aboutInterest2: "Visión por Computadora",
+    aboutInterest2Desc: "Proyecto de tesis: reconocimiento facial con OpenCV y TensorFlow, incluyendo construcción de mini robot.",
+    aboutInterest3: "Cloud Computing",
+    aboutInterest3Desc: "Capacitación en AWS S3 y servicios cloud para aplicaciones escalables.",
+    aboutInterest4: "Tecnologías Modernas",
+    aboutInterest4Desc: "Formación continua en IA Generativa, Frameworks JavaScript y Docker.",
 
     /* ===== PROJECTS ===== */
     projectsTitle: "Proyectos",
     projectsSubtitle:
       "Una selección de trabajos donde diseño y desarrollo experiencias digitales.",
+    projectsMoreComing: "Y muchos más proyectos en camino...",
     projectsDemo: "Ver demo",
     projectsCode: "Código",
-    projectOneTitle: "Portfolio personal",
-    projectOneDesc:
-      "Sitio web diseñado y desarrollado para mostrar mi trabajo y estilo.",
-    projectTwoTitle: "Dashboard web",
-    projectTwoDesc:
-      "Aplicación web con enfoque en usabilidad y visualización de datos.",
-    projectTech: "Astro · Tailwind · JavaScript",
 
     /* ===== CONTACT ===== */
     contactTitle: "Hablemos",
@@ -112,7 +102,7 @@ export const translations = {
 
     /* ===== FOOTER ===== */
     footerDescription:
-      "Desarrollo interfaces elegantes y funcionales combinando diseño, tecnología y atención al detalle.",
+      "Desarrollo soluciones digitales elegantes y funcionales combinando diseño, tecnología y atención al detalle.",
     footerNavTitle: "Navegación",
     footerSocialTitle: "Conecta conmigo",
     footerRights: "Todos los derechos reservados",
@@ -126,11 +116,11 @@ export const translations = {
     navContact: "Contact",
 
     /* ===== HERO ===== */
-    heroRole: "Frontend Developer",
-    heroTitle1: "Creating",
-    heroTitle2: "digital experiences",
+    heroRole: "Software Developer",
+    heroTitle1: "Hi, I'm",
+    heroTitle2: "Valentina Pinto",
     heroSubtitle:
-      "I design and develop elegant, functional interfaces centered on people.",
+      "I design and develop elegant, functional digital solutions centered on people.",
     viewProjects: "View projects",
     contact: "Contact",
 
@@ -160,51 +150,41 @@ export const translations = {
     /* ===== ABOUT ===== */
     aboutTitle: "About me",
     aboutSubtitle:
-      "Designer and developer focused on building intentional digital experiences.",
-    aboutParagraph1:
-      "I'm a frontend developer passionate about design, accessibility and detail.",
-    aboutParagraph2:
-      "I enjoy building clean, clear and pleasant-to-use interfaces.",
-    aboutParagraph3:
-      "I always seek balance between aesthetics, functionality and performance.",
+      "Curious and versatile software developer, passionate about creating purposeful digital experiences.",
     aboutBio1:
-      "I'm a software developer with a strong sensitivity for design and user experience. I'm passionate about creating interfaces that feel light, clear and human, where aesthetics don't compete with functionality.",
+      "I'm a Computer Engineering student at Corporación Universitaria Autónoma de Nariño, finishing my studies in December 2025. My thesis project explores computer vision and facial recognition using Python, OpenCV and TensorFlow, including building a mini robot to demonstrate these capabilities.",
     aboutBio2:
-      "I mainly work with modern technologies like React, TypeScript, Node.js and SQL/NoSQL databases. I'm always learning new tools and improving my skills to create better digital experiences.",
+      "I have professional experience developing Python applications for multimedia management under formal contract. I've trained in modern technologies like Generative AI, JavaScript Frameworks, Docker and AWS S3. I'm passionate about learning new technologies and solving complex problems with elegant solutions.",
     aboutEducation: "Education",
     aboutSkills: "Technical Skills",
-    aboutInterests: "Interests",
-    aboutDegree1: "Computer Systems Engineering",
-    aboutInstitution1: "Technology University",
-    aboutDesc1: "Comprehensive training in software development, algorithms and data structures.",
-    aboutDegree2: "Full Stack Web Development Certification",
-    aboutInstitution2: "Platzi",
-    aboutDesc2: "Specialization in modern web technologies and development best practices.",
-    aboutDegree3: "UI/UX Design Course",
-    aboutInstitution3: "Coursera",
-    aboutDesc3: "Fundamentals of interface design and user experience.",
-    aboutInterest1: "Software Development",
-    aboutInterest1Desc: "I love solving complex problems and creating elegant solutions.",
-    aboutInterest2: "Technical Reading",
-    aboutInterest2Desc: "Always learning about new technologies and best practices.",
-    aboutInterest3: "Coffee & Code",
-    aboutInterest3Desc: "My perfect combination for productive programming sessions.",
-    aboutInterest4: "Music",
-    aboutInterest4Desc: "Music helps me focus and keep creativity flowing.",
+    aboutInterests: "Experience",
+    aboutExperience: "Experience",
+    aboutCertifications: "Certifications",
+    aboutDegree1: "Computer Engineering",
+    aboutInstitution1: "Corporación Universitaria Autónoma de Nariño - Pasto, NAR",
+    aboutDesc1: "University engineering degree. August 2022 - December 2025. Thesis project: Facial recognition system with computer vision and robotics.",
+    aboutDegree2: "Software Development Diploma",
+    aboutInstitution2: "Universidad de Caldas - Manizales, CAL",
+    aboutDesc2: "Web application development and programming. MISIÓN TIC 2022. July 2022 - December 2022.",
+    aboutDegree3: "Technical Certifications",
+    aboutInstitution3: "Continuous Training 2024-2025",
+    aboutDesc3: "Generative AI, JavaScript Frameworks, Docker, AWS S3 and modern cloud technologies.",
+    aboutInterest1: "Multimedia Application Development",
+    aboutInterest1Desc: "Professional experience under formal contract developing Python application for multimedia management.",
+    aboutInterest2: "Computer Vision",
+    aboutInterest2Desc: "Thesis project: facial recognition with OpenCV and TensorFlow, including mini robot construction.",
+    aboutInterest3: "Cloud Computing",
+    aboutInterest3Desc: "Training in AWS S3 and cloud services for scalable applications.",
+    aboutInterest4: "Modern Technologies",
+    aboutInterest4Desc: "Continuous training in Generative AI, JavaScript Frameworks and Docker.",
 
     /* ===== PROJECTS ===== */
     projectsTitle: "Projects",
     projectsSubtitle:
       "A selection of work where I design and build digital experiences.",
+    projectsMoreComing: "And many more projects coming soon...",
     projectsDemo: "View demo",
     projectsCode: "Code",
-    projectOneTitle: "Personal portfolio",
-    projectOneDesc:
-      "Website designed and developed to showcase my work and style.",
-    projectTwoTitle: "Web dashboard",
-    projectTwoDesc:
-      "Web application focused on usability and data visualization.",
-    projectTech: "Astro · Tailwind · JavaScript",
 
     /* ===== CONTACT ===== */
     contactTitle: "Let's talk",
@@ -231,7 +211,7 @@ export const translations = {
 
     /* ===== FOOTER ===== */
     footerDescription:
-      "I build elegant and functional interfaces combining design, technology and attention to detail.",
+      "I build elegant and functional digital solutions combining design, technology and attention to detail.",
     footerNavTitle: "Navigation",
     footerSocialTitle: "Connect with me",
     footerRights: "All rights reserved",
